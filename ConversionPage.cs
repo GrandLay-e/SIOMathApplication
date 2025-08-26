@@ -28,7 +28,10 @@ namespace SIO_Math
         private string ConvertNumber(string baseDepart, string baseDestination, string number)
         {
             string result;
-            int _number = Convert.ToInt32(number);
+
+            int _number;
+            int.TryParse(number, out _number);
+            
             switch (baseDepart)
             {
                 case "Decimal":
@@ -67,14 +70,15 @@ namespace SIO_Math
                         case "Decimal":
                             result = MathFunctions.ConvertHexadecimalToDecimal(number);
                             break;
-                        case "Hexadecimal":
-                            result = MathFunctions.ConvertHexadecimalToDecimal(number);
+                        case "Binary":
+                            result = MathFunctions.ConvertHexadecimalToBinary(number);
                             break;
                         default:
                             result = number;
                             break;
                     }
                     break;
+
                 default:
                     throw new ArgumentException("Base de départ non prise en charge.");
             }
