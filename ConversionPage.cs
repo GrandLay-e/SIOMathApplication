@@ -20,18 +20,20 @@ namespace SIO_Math
         }
 
         private void ConversionPage_Load(object sender, EventArgs e)
-        {}
+        { }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {}
+        { }
 
         private string ConvertNumber(string baseDepart, string baseDestination, string number)
         {
             string result;
 
-            int _number;
-            int.TryParse(number, out _number);
-            
+            //int _number;
+            uint _number;
+            //int.TryParse(number, out _number);
+            uint.TryParse(number, out _number);
+
             switch (baseDepart)
             {
                 case "Decimal":
@@ -85,18 +87,19 @@ namespace SIO_Math
 
             return result;
         }
-        
-        
+
+
         private void conversionButton_Click(object sender, EventArgs e)
         {
             string showedText;
             if (BaseDepart.Text == "" || baseDestination.Text == "" || numberToConvert.Text == "")
                 showedText = "Assurez-vous d'avoir bien fait vos saisies";
             else
-                showedText = ConvertNumber( BaseDepart.Text, baseDestination.Text, numberToConvert.Text);
+                showedText = ConvertNumber(BaseDepart.Text, baseDestination.Text, numberToConvert.Text);
 
             result.Text = showedText;
-                 
+
         }
+
     }
 }

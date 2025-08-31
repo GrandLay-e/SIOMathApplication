@@ -29,20 +29,36 @@
         private void InitializeComponent()
         {
             pannelContainer = new Panel();
+            home = new Button();
             SuspendLayout();
             // 
             // pannelContainer
             // 
-            pannelContainer.Location = new Point(-2, 0);
+            pannelContainer.Location = new Point(12, 47);
             pannelContainer.Name = "pannelContainer";
-            pannelContainer.Size = new Size(802, 450);
+            pannelContainer.Size = new Size(940, 543);
             pannelContainer.TabIndex = 0;
+            // 
+            // home
+            // 
+            home.BackColor = Color.DarkGreen;
+            home.BackgroundImageLayout = ImageLayout.Center;
+            home.Font = new Font("Segoe UI Black", 9F, FontStyle.Bold);
+            home.ForeColor = SystemColors.ButtonFace;
+            home.Location = new Point(12, 12);
+            home.Name = "home";
+            home.Size = new Size(94, 29);
+            home.TabIndex = 10;
+            home.Text = "\U0001f6d6 Home";
+            home.UseVisualStyleBackColor = false;
+            home.Click += home_Click;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(964, 602);
+            Controls.Add(home);
             Controls.Add(pannelContainer);
             Name = "Form1";
             Text = "Mathématique BTS SIO";
@@ -53,5 +69,6 @@
         #endregion
 
         private Panel pannelContainer;
+        private Button home;
     }
 }
