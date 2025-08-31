@@ -27,16 +27,24 @@ namespace SIO_Math
 
         private string ConvertNumber(string baseDepart, string baseDestination, string number)
         {
-            string result;
+            string result = "";
+            long _number = 0;
+            bool isInputNumberDecimal, isInputNumberBinary, isInputNumberHexadecimal;
+            isInputNumberDecimal = number.isDecimal();
+            isInputNumberBinary = number.isBinary();
+            isInputNumberHexadecimal = number.isHexadecimal();
 
-            //int _number;
-            uint _number;
-            //int.TryParse(number, out _number);
-            uint.TryParse(number, out _number);
+            if (isInputNumberDecimal)
+                long.TryParse(number, out _number);
 
             switch (baseDepart)
             {
                 case "Decimal":
+                    if (!isInputNumberDecimal)
+                    {
+                        MessageBox.Show("Invalide Decimal Input ! ");
+                        break;
+                    }
                     switch (baseDestination)
                     {
                         case "Binary":
@@ -52,6 +60,11 @@ namespace SIO_Math
                     break;
 
                 case "Binary":
+                    if (!isInputNumberBinary)
+                    {
+                        MessageBox.Show("Invalid Binary Input ! ");
+                        break;
+                    }
                     switch (baseDestination)
                     {
                         case "Decimal":
@@ -67,6 +80,10 @@ namespace SIO_Math
                     break;
 
                 case "Hexadecimal":
+                    if (!isInputNumberHexadecimal){
+                        MessageBox.Show("Invalid Hexadecimal Input ! ");
+                        break;
+                    }
                     switch (baseDestination)
                     {
                         case "Decimal":
@@ -84,16 +101,15 @@ namespace SIO_Math
                 default:
                     throw new ArgumentException("Base de départ non prise en charge.");
             }
-
             return result;
         }
 
 
         private void conversionButton_Click(object sender, EventArgs e)
         {
-            string showedText;
+            string showedText = "";
             if (BaseDepart.Text == "" || baseDestination.Text == "" || numberToConvert.Text == "")
-                showedText = "Assurez-vous d'avoir bien fait vos saisies";
+                MessageBox.Show("Vérifiez votre saisie ! ");
             else
                 showedText = ConvertNumber(BaseDepart.Text, baseDestination.Text, numberToConvert.Text);
 

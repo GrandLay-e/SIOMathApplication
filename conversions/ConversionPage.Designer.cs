@@ -52,20 +52,20 @@
             // from
             // 
             from.AutoSize = true;
-            from.Location = new Point(138, 82);
+            from.Location = new Point(107, 83);
             from.Name = "from";
-            from.Size = new Size(43, 20);
+            from.Size = new Size(93, 20);
             from.TabIndex = 1;
-            from.Text = "From";
+            from.Text = "Base Origine";
             // 
             // to
             // 
             to.AutoSize = true;
-            to.Location = new Point(526, 83);
+            to.Location = new Point(474, 83);
             to.Name = "to";
-            to.Size = new Size(25, 20);
+            to.Size = new Size(140, 20);
             to.TabIndex = 2;
-            to.Text = "To";
+            to.Text = "Base De Conversion";
             // 
             // baseDestination
             // 
@@ -79,20 +79,19 @@
             // ResultShow
             // 
             ResultShow.AutoSize = true;
-            ResultShow.Location = new Point(329, 349);
+            ResultShow.Location = new Point(132, 391);
             ResultShow.Name = "ResultShow";
-            ResultShow.Size = new Size(49, 20);
+            ResultShow.Size = new Size(60, 20);
             ResultShow.TabIndex = 4;
-            ResultShow.Text = "Result";
+            ResultShow.Text = "Result : ";
             // 
             // result
             // 
             result.AutoSize = true;
-            result.Location = new Point(329, 391);
+            result.Location = new Point(200, 391);
             result.Name = "result";
-            result.Size = new Size(45, 20);
+            result.Size = new Size(0, 20);
             result.TabIndex = 5;
-            result.Text = "______";
             // 
             // number
             // 

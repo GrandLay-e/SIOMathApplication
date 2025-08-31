@@ -34,6 +34,7 @@
             // 
             // pannelContainer
             // 
+            pannelContainer.BackColor = Color.Gray;
             pannelContainer.Location = new Point(12, 47);
             pannelContainer.Name = "pannelContainer";
             pannelContainer.Size = new Size(940, 543);
@@ -43,6 +44,7 @@
             // 
             home.BackColor = Color.DarkGreen;
             home.BackgroundImageLayout = ImageLayout.Center;
+            home.FlatStyle = FlatStyle.System;
             home.Font = new Font("Segoe UI Black", 9F, FontStyle.Bold);
             home.ForeColor = SystemColors.ButtonFace;
             home.Location = new Point(12, 12);
@@ -57,6 +59,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.Gray;
             ClientSize = new Size(964, 602);
             Controls.Add(home);
             Controls.Add(pannelContainer);

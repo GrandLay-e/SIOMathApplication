@@ -32,6 +32,9 @@
             nb2Pgcd = new TextBox();
             calculPgcd = new Button();
             resultPgcd = new Label();
+            resultText = new Label();
+            nb2Text = new Label();
+            nb1Text = new Label();
             SuspendLayout();
             // 
             // nb1Pgcd
@@ -61,16 +64,45 @@
             // resultPgcd
             // 
             resultPgcd.AutoSize = true;
-            resultPgcd.Location = new Point(366, 318);
+            resultPgcd.Location = new Point(272, 378);
             resultPgcd.Name = "resultPgcd";
-            resultPgcd.Size = new Size(57, 20);
+            resultPgcd.Size = new Size(0, 20);
             resultPgcd.TabIndex = 3;
-            resultPgcd.Text = "________";
+            // 
+            // resultText
+            // 
+            resultText.AutoSize = true;
+            resultText.Location = new Point(196, 378);
+            resultText.Name = "resultText";
+            resultText.Size = new Size(60, 20);
+            resultText.TabIndex = 9;
+            resultText.Text = "Result : ";
+            // 
+            // nb2Text
+            // 
+            nb2Text.AutoSize = true;
+            nb2Text.Location = new Point(505, 83);
+            nb2Text.Name = "nb2Text";
+            nb2Text.Size = new Size(77, 20);
+            nb2Text.TabIndex = 8;
+            nb2Text.Text = "Nombre B";
+            // 
+            // nb1Text
+            // 
+            nb1Text.AutoSize = true;
+            nb1Text.Location = new Point(196, 83);
+            nb1Text.Name = "nb1Text";
+            nb1Text.Size = new Size(78, 20);
+            nb1Text.TabIndex = 7;
+            nb1Text.Text = "Nombre A";
             // 
             // PgcdPage
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(resultText);
+            Controls.Add(nb2Text);
+            Controls.Add(nb1Text);
             Controls.Add(resultPgcd);
             Controls.Add(calculPgcd);
             Controls.Add(nb2Pgcd);
@@ -87,5 +119,8 @@
         private TextBox nb2Pgcd;
         private Button calculPgcd;
         private Label resultPgcd;
+        private Label resultText;
+        private Label nb2Text;
+        private Label nb1Text;
     }
 }

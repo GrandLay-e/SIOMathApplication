@@ -19,16 +19,20 @@ namespace SIO_Math
 
         private void calculButton_Click(object sender, EventArgs e)
         {
-            long _nb1;
-            long _nb2;
-            
-            bool isNb1Convertible = long.TryParse(nb1.Text, out _nb1);
-            bool isNb2Convertible = long.TryParse(nb2.Text, out _nb2);
+            long _nb1, _nb2;
+            bool isNb1Convertible, isNb2Convertible;
+
+            isNb1Convertible = nb1.Text.isDecimal();
+            isNb2Convertible = nb2.Text.isDecimal();
 
             if (isNb1Convertible && isNb2Convertible)
+            {
+                _nb1 = long.Parse(nb1.Text);
+                _nb2 = long.Parse(nb2.Text);
                 ppcmResult.Text = MathFunctions.Ppcm(_nb1, _nb2).ToString();
+            }
             else
-                ppcmResult.Text = "Vérifiez votre saisie";
+                MessageBox.Show("Invalid input number !");
         }
     }
 }

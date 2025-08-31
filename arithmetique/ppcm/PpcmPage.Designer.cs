@@ -32,6 +32,9 @@
             nb2 = new TextBox();
             calculButton = new Button();
             ppcmResult = new Label();
+            nb1Text = new Label();
+            nb2Text = new Label();
+            resultText = new Label();
             SuspendLayout();
             // 
             // nb1
@@ -61,16 +64,46 @@
             // ppcmResult
             // 
             ppcmResult.AutoSize = true;
-            ppcmResult.Location = new Point(346, 350);
+            ppcmResult.Location = new Point(246, 367);
             ppcmResult.Name = "ppcmResult";
-            ppcmResult.Size = new Size(39, 20);
+            ppcmResult.Size = new Size(0, 20);
             ppcmResult.TabIndex = 3;
-            ppcmResult.Text = "_____";
+            ppcmResult.TextAlign = ContentAlignment.TopCenter;
+            // 
+            // nb1Text
+            // 
+            nb1Text.AutoSize = true;
+            nb1Text.Location = new Point(165, 72);
+            nb1Text.Name = "nb1Text";
+            nb1Text.Size = new Size(78, 20);
+            nb1Text.TabIndex = 4;
+            nb1Text.Text = "Nombre A";
+            // 
+            // nb2Text
+            // 
+            nb2Text.AutoSize = true;
+            nb2Text.Location = new Point(504, 72);
+            nb2Text.Name = "nb2Text";
+            nb2Text.Size = new Size(77, 20);
+            nb2Text.TabIndex = 5;
+            nb2Text.Text = "Nombre B";
+            // 
+            // resultText
+            // 
+            resultText.AutoSize = true;
+            resultText.Location = new Point(165, 367);
+            resultText.Name = "resultText";
+            resultText.Size = new Size(60, 20);
+            resultText.TabIndex = 6;
+            resultText.Text = "Result : ";
             // 
             // PpcmPage
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(resultText);
+            Controls.Add(nb2Text);
+            Controls.Add(nb1Text);
             Controls.Add(ppcmResult);
             Controls.Add(calculButton);
             Controls.Add(nb2);
@@ -87,5 +120,8 @@
         private TextBox nb2;
         private Button calculButton;
         private Label ppcmResult;
+        private Label nb1Text;
+        private Label nb2Text;
+        private Label resultText;
     }
 }
