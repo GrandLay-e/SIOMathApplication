@@ -37,6 +37,8 @@
             number = new Label();
             numberToConvert = new TextBox();
             conversionButton = new Button();
+            operations = new Label();
+            operationDisplay = new Label();
             SuspendLayout();
             // 
             // BaseDepart
@@ -79,7 +81,7 @@
             // ResultShow
             // 
             ResultShow.AutoSize = true;
-            ResultShow.Location = new Point(132, 391);
+            ResultShow.Location = new Point(24, 343);
             ResultShow.Name = "ResultShow";
             ResultShow.Size = new Size(60, 20);
             ResultShow.TabIndex = 4;
@@ -88,7 +90,7 @@
             // result
             // 
             result.AutoSize = true;
-            result.Location = new Point(200, 391);
+            result.Location = new Point(107, 343);
             result.Name = "result";
             result.Size = new Size(0, 20);
             result.TabIndex = 5;
@@ -119,10 +121,29 @@
             conversionButton.UseVisualStyleBackColor = true;
             conversionButton.Click += conversionButton_Click;
             // 
+            // operations
+            // 
+            operations.AutoSize = true;
+            operations.Location = new Point(24, 415);
+            operations.Name = "operations";
+            operations.Size = new Size(93, 20);
+            operations.TabIndex = 9;
+            operations.Text = "Operations : ";
+            // 
+            // operationDisplay
+            // 
+            operationDisplay.AutoSize = true;
+            operationDisplay.Location = new Point(123, 415);
+            operationDisplay.Name = "operationDisplay";
+            operationDisplay.Size = new Size(0, 20);
+            operationDisplay.TabIndex = 10;
+            // 
             // ConversionPage
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(operationDisplay);
+            Controls.Add(operations);
             Controls.Add(conversionButton);
             Controls.Add(numberToConvert);
             Controls.Add(number);
@@ -133,7 +154,7 @@
             Controls.Add(from);
             Controls.Add(BaseDepart);
             Name = "ConversionPage";
-            Size = new Size(780, 515);
+            Size = new Size(1051, 759);
             Load += ConversionPage_Load;
             ResumeLayout(false);
             PerformLayout();
@@ -150,5 +171,7 @@
         private Label number;
         private TextBox numberToConvert;
         private Button conversionButton;
+        private Label operations;
+        private Label operationDisplay;
     }
 }

@@ -35,6 +35,7 @@
             nb1Text = new Label();
             nb2Text = new Label();
             resultText = new Label();
+            ppcmOperations = new Label();
             SuspendLayout();
             // 
             // nb1
@@ -97,10 +98,19 @@
             resultText.TabIndex = 6;
             resultText.Text = "Result : ";
             // 
+            // ppcmOperations
+            // 
+            ppcmOperations.AutoSize = true;
+            ppcmOperations.Location = new Point(164, 413);
+            ppcmOperations.Name = "ppcmOperations";
+            ppcmOperations.Size = new Size(0, 20);
+            ppcmOperations.TabIndex = 7;
+            // 
             // PpcmPage
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(ppcmOperations);
             Controls.Add(resultText);
             Controls.Add(nb2Text);
             Controls.Add(nb1Text);
@@ -123,5 +133,6 @@
         private Label nb1Text;
         private Label nb2Text;
         private Label resultText;
+        private Label ppcmOperations;
     }
 }

@@ -39,9 +39,22 @@ namespace SIO_Math
         private void AddAndAdjustPage(UserControl page)
         {
             page.Dock = DockStyle.Fill; // adjust size
-            page.Visible = false; // hide (initial)
+            page.Visible = false; // hide (default)
+            page.AutoScroll = true; // enable scroll
             pannelContainer.Controls.Add(page); // add to pannel container
+
+            //AdjustPanelSize();
         }
+        //private void AdjustPanelSize()
+        //{
+        //    int totalHeight = 0;
+        //    foreach (Control control in pannelContainer.Controls)
+        //    {
+        //        totalHeight += control.Height;
+        //    }
+
+        //    pannelContainer.Height = totalHeight;
+        //}
 
         private void Arithmetique_ChoisenOpeartion(string operationName)
         {

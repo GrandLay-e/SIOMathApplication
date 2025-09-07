@@ -40,6 +40,7 @@
             nb2Text = new Label();
             moduloText = new Label();
             label1 = new Label();
+            congruencesOperations = new Label();
             menuCongruence.SuspendLayout();
             SuspendLayout();
             // 
@@ -144,10 +145,19 @@
             label1.TabIndex = 9;
             label1.Text = "Result : ";
             // 
+            // congruencesOperations
+            // 
+            congruencesOperations.AutoSize = true;
+            congruencesOperations.Location = new Point(171, 481);
+            congruencesOperations.Name = "congruencesOperations";
+            congruencesOperations.Size = new Size(0, 20);
+            congruencesOperations.TabIndex = 10;
+            // 
             // CongruencePage
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(congruencesOperations);
             Controls.Add(label1);
             Controls.Add(moduloText);
             Controls.Add(nb2Text);
@@ -180,5 +190,6 @@
         private Label nb2Text;
         private Label moduloText;
         private Label label1;
+        private Label congruencesOperations;
     }
 }

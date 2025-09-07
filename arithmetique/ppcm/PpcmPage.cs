@@ -29,7 +29,8 @@ namespace SIO_Math
             {
                 _nb1 = long.Parse(nb1.Text);
                 _nb2 = long.Parse(nb2.Text);
-                ppcmResult.Text = MathFunctions.Ppcm(_nb1, _nb2).ToString();
+                ppcmOperations.Text = MathFunctions.Ppcm(_nb1, _nb2).ConvertListToStringToDisplayOperations();
+                ppcmResult.Text = MathFunctions.Ppcm(_nb1, _nb2).ConvertListToStringToDisplayOperations("", 1);
             }
             else
                 MessageBox.Show("Invalid input number !");

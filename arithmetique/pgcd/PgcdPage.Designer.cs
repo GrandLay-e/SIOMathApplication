@@ -35,6 +35,7 @@
             resultText = new Label();
             nb2Text = new Label();
             nb1Text = new Label();
+            pgcdOperation = new Label();
             SuspendLayout();
             // 
             // nb1Pgcd
@@ -96,10 +97,19 @@
             nb1Text.TabIndex = 7;
             nb1Text.Text = "Nombre A";
             // 
+            // pgcdOperation
+            // 
+            pgcdOperation.AutoSize = true;
+            pgcdOperation.Location = new Point(197, 418);
+            pgcdOperation.Name = "pgcdOperation";
+            pgcdOperation.Size = new Size(0, 20);
+            pgcdOperation.TabIndex = 10;
+            // 
             // PgcdPage
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(pgcdOperation);
             Controls.Add(resultText);
             Controls.Add(nb2Text);
             Controls.Add(nb1Text);
@@ -122,5 +132,6 @@
         private Label resultText;
         private Label nb2Text;
         private Label nb1Text;
+        private Label pgcdOperation;
     }
 }

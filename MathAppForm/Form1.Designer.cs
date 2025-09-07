@@ -37,7 +37,7 @@
             pannelContainer.BackColor = Color.Gray;
             pannelContainer.Location = new Point(12, 47);
             pannelContainer.Name = "pannelContainer";
-            pannelContainer.Size = new Size(940, 543);
+            pannelContainer.Size = new Size(1020, 686);
             pannelContainer.TabIndex = 0;
             // 
             // home
@@ -60,7 +60,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Gray;
-            ClientSize = new Size(964, 602);
+            ClientSize = new Size(1036, 734);
             Controls.Add(home);
             Controls.Add(pannelContainer);
             Name = "Form1";

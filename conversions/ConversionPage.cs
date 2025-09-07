@@ -16,7 +16,6 @@ namespace SIO_Math
         public ConversionPage()
         {
             InitializeComponent();
-
         }
 
         private void ConversionPage_Load(object sender, EventArgs e)
@@ -25,9 +24,9 @@ namespace SIO_Math
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         { }
 
-        private string ConvertNumber(string baseDepart, string baseDestination, string number)
+        private List<string> ConvertNumber(string baseDepart, string baseDestination, string number)
         {
-            string result = "";
+            string result = "", operations = "";
             long _number = 0;
             bool isInputNumberDecimal, isInputNumberBinary, isInputNumberHexadecimal;
             isInputNumberDecimal = number.isDecimal();
@@ -48,10 +47,12 @@ namespace SIO_Math
                     switch (baseDestination)
                     {
                         case "Binary":
-                            result = MathFunctions.ConvertDecimalToBinary(_number);
+                            operations = MathFunctions.ConvertDecimalToBinary(_number).ConvertListToStringToDisplayOperations();
+                            result = MathFunctions.ConvertDecimalToBinary(_number).ConvertListToStringToDisplayOperations("", 1);
                             break;
                         case "Hexadecimal":
-                            result = MathFunctions.ConvertDecimalToHexadecimal(_number);
+                            operations = MathFunctions.ConvertDecimalToHexadecimal(_number).ConvertListToStringToDisplayOperations();
+                            result = MathFunctions.ConvertDecimalToHexadecimal(_number).ConvertListToStringToDisplayOperations("", 1);
                             break;
                         default:
                             result = number;
@@ -68,10 +69,12 @@ namespace SIO_Math
                     switch (baseDestination)
                     {
                         case "Decimal":
-                            result = MathFunctions.ConvertBinaryToDecimal(_number);
+                            operations = MathFunctions.ConvertBinaryToDecimal(_number).ConvertListToStringToDisplayOperations();
+                            result = MathFunctions.ConvertBinaryToDecimal(_number).ConvertListToStringToDisplayOperations("",1);
                             break;
                         case "Hexadecimal":
-                            result = MathFunctions.ConvertBinaryToHexadecimal(_number);
+                            result = MathFunctions.ConvertBinaryToHexadecimal(_number).ConvertListToStringToDisplayOperations("", 1);
+                            operations = MathFunctions.ConvertBinaryToHexadecimal(_number).ConvertListToStringToDisplayOperations();
                             break;
                         default:
                             result = number;
@@ -87,10 +90,12 @@ namespace SIO_Math
                     switch (baseDestination)
                     {
                         case "Decimal":
-                            result = MathFunctions.ConvertHexadecimalToDecimal(number);
+                            operations = MathFunctions.ConvertHexadecimalToDecimal(number).ConvertListToStringToDisplayOperations();
+                            result = MathFunctions.ConvertHexadecimalToDecimal(number).ConvertListToStringToDisplayOperations("", 1);
                             break;
                         case "Binary":
-                            result = MathFunctions.ConvertHexadecimalToBinary(number);
+                            operations = MathFunctions.ConvertHexadecimalToBinary(number).ConvertListToStringToDisplayOperations();
+                            result = MathFunctions.ConvertHexadecimalToBinary(number).ConvertListToStringToDisplayOperations("", 1);
                             break;
                         default:
                             result = number;
@@ -101,20 +106,24 @@ namespace SIO_Math
                 default:
                     throw new ArgumentException("Base de départ non prise en charge.");
             }
-            return result;
+            return new List<string> {result, operations};
         }
 
 
         private void conversionButton_Click(object sender, EventArgs e)
         {
-            string showedText = "";
+            string showedTextResult = "", ShowedTextOperations = "";
             if (BaseDepart.Text == "" || baseDestination.Text == "" || numberToConvert.Text == "")
                 MessageBox.Show("Vérifiez votre saisie ! ");
             else
-                showedText = ConvertNumber(BaseDepart.Text, baseDestination.Text, numberToConvert.Text);
+            {
+                showedTextResult = ConvertNumber(BaseDepart.Text, baseDestination.Text, numberToConvert.Text)[0];
+                ShowedTextOperations = ConvertNumber(BaseDepart.Text, baseDestination.Text, numberToConvert.Text)[1];
+            }
 
-            result.Text = showedText;
-
+            result.Text = showedTextResult;
+            operations.Text = ShowedTextOperations;
+            this.AutoScroll = true;
         }
 
     }
